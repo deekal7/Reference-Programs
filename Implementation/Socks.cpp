@@ -11,7 +11,7 @@ int main()
     {
         cin>>v[i];
         available_pairs+=v[i]/2;
-        v[i]-=1;
+        v[i]-=1; //initially select one of each color
     }
     if(available_pairs<k)
     {
@@ -32,7 +32,7 @@ int main()
         }
         if(pairs>=k)
         {
-            cout<<k*2+n-1<<endl;
+            cout<<k*2+n-1<<endl; //ignore last sock
             return 0;
         }
         cout<<total-(pairs-k)<<endl;

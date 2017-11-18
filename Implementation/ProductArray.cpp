@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
+int main() //no of elements in subarray with max product
 {
   cout<<"Enter number of elements in array"<<endl;
   int n;

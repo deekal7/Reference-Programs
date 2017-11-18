@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-static string rle(string str)
+static string rle(string str)//aaabbcccc = a3b2c4
 {
   int len = str.size();
   if(len==0)

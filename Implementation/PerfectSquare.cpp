@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-static bool perfectSquare(int n)
+static bool perfectSquare(int n) //odd number series equals number
 {
   for(int i=1,sum=0;sum<n;i+=2)
   {
