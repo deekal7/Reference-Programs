@@ -1,5 +1,6 @@
 int getcount(node *head)
 {
+  //length of lists
   node *cur=head;
   int count=0;
   while(cur)
@@ -12,6 +13,7 @@ int getcount(node *head)
 
 int getInter(node* head1, node* head2)
 {
+  //which list has to be moved forward by the difference in length
   int c1=getcount(head1);
   int c2=getcount(head2);
   int d;
@@ -29,6 +31,7 @@ int getInter(node* head1, node* head2)
 
 int getVal(int d, node* head1, node* head2)
 {
+  //find the node where in intersects
   node* cur1=head1, cur2=head2;
   for(int i=0;i<d;i++)
   {

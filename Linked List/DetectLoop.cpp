@@ -1,21 +1,29 @@
 //Floyds Algorithm
 int detectloop(node* head)
 {
-  node* slow=head,fast=head;
+  node* slow=head,*fast=head;
   while(slow && fast && fast->next)
   {
     slow=slow->next;
     fast=fast->next->next;
     if(fast==slow)
     {
-      return 1;
+      break;
     }
   }
-  return 0;
+  if(fast==NULL||fast->next==NULL)
+    return NULL;
+  slow=head;
+  while(slow!=fast)
+  {
+    slow=slow->next;
+    fast=fast->next;
+  }
+  return fast;
 }
 
 //Hashing
-int detectloop(node *head)
+int detectloop(node *h)
 {
   unordered_set<node *> s;
   while(h)
