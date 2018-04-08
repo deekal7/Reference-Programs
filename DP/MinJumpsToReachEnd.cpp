@@ -7,18 +7,21 @@ int minJumps(int a[], int n)
 {
   if(n==0||a[0]==0)
     return INT_MAX;
-  int count[n];
-  count[0]=0;
+  int dp[n];
+  dp[0]=0;
   for(int i=1;i<n;i++)
   {
-    count[i]=INT_MAX;
+    dp[i]=INT_MAX;
     for(int j=0;j<i;j++)
     {
-      if(i<=j+a[j] && a[j]!=INT_MAX)
-        count[i]=min(count[i], count[j]+1);
+      if(j+a[j]>=i && dp[j]!=INT_MAX)
+      {
+        dp[i]=min(dp[i],dp[j]+1);
+        break;
+      }
     }
   }
-  return count[n-1];
+  return dp[n-1];
 }
 int main()
 {
